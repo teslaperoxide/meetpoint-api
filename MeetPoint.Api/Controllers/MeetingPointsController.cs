@@ -103,6 +103,13 @@ var response = venues.Select(venue =>
                     participantDistances.Average(x => x.DistanceKm), 2)
             };
         })
+        .OrderBy(venue => venue.MaximumParticipantDistanceKm)
+        .ThenBy(venue => venue.TotalDistanceKm)
+        .Select((venue, index) =>
+        {
+            venue.Rank = index + 1;
+            return venue;
+        })
         .ToList();
 
         return Ok(response);

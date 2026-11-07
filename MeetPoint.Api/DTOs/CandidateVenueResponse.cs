@@ -25,6 +25,8 @@ public class CandidateVenueResponse
     public double TotalDistanceKm { get; set; }
     public double MaximumParticipantDistanceKm { get; set; }
     public double AverageParticipantDistanceKm { get; set; }
+
+    public int Rank { get; set; }
 }
 
 public class ParticipantVenueDistanceResponse
